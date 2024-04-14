@@ -1,0 +1,54 @@
+
+import tkinter as tk
+from tkinter import ttk
+
+class Application(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        # Set the background color
+        self.configure(bg='#222222')
+
+        # Set the window size
+        self.geometry("800x500")
+
+        # Set the window title
+        self.title("Findash")
+
+        # Create a vertical slider
+        self.slider = ttk.Scale(self, from_=0, to=100, orient='vertical')
+        self.slider.pack(side='left', fill='y')
+
+        # Create a notebook for tabs
+        self.notebook = ttk.Notebook(self)
+        self.notebook.pack(expand=True, fill='both')
+
+        # Create tabs
+        self.graph_tab = ttk.Frame(self.notebook)
+        self.terminal_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.graph_tab, text='Graph')
+        self.notebook.add(self.terminal_tab, text='Terminal')
+
+        # Example widget for the graph tab
+        self.graph_label = tk.Label(self.graph_tab, text="Graph goes here", bg='#222222', fg='white')
+        self.graph_label.pack(expand=True, fill='both')
+
+        # Example widget for the terminal tab
+        self.terminal_label = tk.Label(self.terminal_tab, text="Terminal goes here", bg='#222222', fg='white')
+        self.terminal_label.pack(expand=True, fill='both')
+
+        # Algo Tab example
+        self.algo_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.algo_tab, text='Algo')
+
+        # Checkbutton for algorithm activation
+        self.algo_checkbutton = ttk.Checkbutton(self.algo_tab, text="Activate Algo", command=self.activate_algo)
+        self.algo_checkbutton.pack()
+
+    def activate_algo(self):
+        # Placeholder for algorithm activation logic
+        print("Algo activated")
+
+if __name__ == "__main__":
+    app = Application()
+    app.mainloop()
