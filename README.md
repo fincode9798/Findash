@@ -88,7 +88,3 @@ I welcome every python coder interested in Financial Markets to join and share t
 try come up with better options. Remember this project would create a software handcrafted by this community meant only for
 the members of this community. 
 Happy Coding !
-
-
-
-   Data Manager is the tab/Platform that provides various
